@@ -4,7 +4,7 @@
 
 	<groupId>uk.pallas.systems.site</groupId>
 	<artifactId>checkstyle</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>Pallas Checkstyle Configuration</name>
 	<packaging>jar</packaging>
 	<description>Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems.</description>
