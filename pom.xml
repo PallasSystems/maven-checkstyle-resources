@@ -4,7 +4,7 @@
 
 	<groupId>uk.pallas.systems.site</groupId>
 	<artifactId>checkstyle</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>Pallas Checkstyle Configuration</name>
 	<packaging>jar</packaging>
 	<description>Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems.</description>
@@ -41,7 +41,7 @@
 		<connection>scm:git:https://github.com/${github_organisation}/${github_repository_name}</connection>
 		<developerConnection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</developerConnection>
 		<url>https://github.com/${github_organisation}/${github_repository_name}</url>
-		<tag>v0.0.2</tag>
+		<tag>v0.0.1</tag>
 	</scm>
 
 	<issueManagement>
