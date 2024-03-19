@@ -74,7 +74,7 @@
 		<project.build.targetEncoding>ISO-8859-1</project.build.targetEncoding>
 
 		<!-- Compiler settings, lets you tweak what JDK you are using as needed. -->
-		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.release>11</maven.compiler.release>
 		<maven.compiler.target>11</maven.compiler.target>
