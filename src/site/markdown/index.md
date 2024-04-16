@@ -31,6 +31,6 @@
     </div>
   </div>
   <div class="my-2 row">
-    <p>Current Version: 0.1.1</p>
+    <p>Current Version: 0.0.3</p>
   </div>
 </div>
