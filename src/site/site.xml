@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+    <edit>${project.scm.url}</edit>
+
+    <skin>
+        <groupId>io.github.stevecrox.maven.skins</groupId>
+        <artifactId>bootstrap-site-skin</artifactId>
+        <version>1.4.3</version>
+    </skin>
+
+    <version position="none" />
+    <publishDate position="none" />
+
+    <custom>
+        <bootstrapSkin>
+            <contact>
+                <email>info@pallas.uk</email>
+            </contact>
+            <facebook>
+                <groupId>350073883439443</groupId>
+            </facebook>
+            <linkedin>
+                <accountId>pallas-systems-ltd</accountId>
+            </linkedin>
+            <gitHub>
+                <organisation>PallasSystems</organisation>
+                <repository>maven-checkstyle-plugin</repository>
+            </gitHub>
+            <navbar>
+                <enabled>true</enabled>
+                <icon>
+                    <alt>Project to manage the Checkstyle rules to apply to all Pallas Systems Java projects.</alt>
+                    <href>./index.html</href>
+                    <src>./images/pallas-image.png</src>
+                    <width>68px</width>
+                    <height>52px</height>
+                </icon>
+            </navbar>
+            <projectbar>
+                <skipBreadcrumb>true</skipBreadcrumb>
+                <style>navbar_suffix_menu border-top navbar-dark bg-dark container-fluid</style>
+            </projectbar>
+            <twitter>
+                <accountId>PallasUK</accountId>
+            </twitter>
+        </bootstrapSkin>
+    </custom>
+
+    <body>
+        <links>
+            <item name="Getting Started" href="./gettingStarted/index.html"/>
+            <item name="Rules" href="./rules/index.html"/>
+        </links>
+
+        <menu ref="modules" />
+        <menu ref="reports" />
+    </body>
+</project>
