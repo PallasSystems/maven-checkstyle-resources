@@ -4,7 +4,7 @@
 
 	<groupId>uk.pallas.systems.site</groupId>
 	<artifactId>checkstyle</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>Pallas Checkstyle Configuration</name>
 	<packaging>jar</packaging>
 	<description>Project to manage the Checkstyle rules to apply to all Pallas Systems Java projects.</description>
@@ -41,7 +41,7 @@
 		<connection>scm:git:https://github.com/${github_organisation}/${github_repository_name}</connection>
 		<developerConnection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</developerConnection>
 		<url>https://github.com/${github_organisation}/${github_repository_name}</url>
-		<tag>v0.0.3</tag>
+		<tag>v0.0.1</tag>
 	</scm>
 
 	<issueManagement>
