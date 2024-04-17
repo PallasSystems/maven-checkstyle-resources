@@ -1,1 +1,78 @@
-/* You can override this file with your own styles */
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+
+/** 
+ * Override of root theme to provide nice colouring.
+ */
+:root {
+  --bs-light-rgb: 255, 255, 255;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/**
+ *
+ */
+div.content {
+  padding-top: 1rem !important;
+  padding-bottom: 2rem !important;
+}
+
+img.content {
+  padding-bottom: 1rem !important;
+  padding-top: 1rem !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+/*
+ * content-specific
+ * -------------------------------------------------- */
+h1.display-4 {
+  color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+  ul.navbar_suffix_menu {
+    display: none;
+  }
+  nav.navbar_suffix_menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  a.navbar_collapse_menu {
+    display: none;
+  }
+}
+
+p.home_btn {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0.75em;
+}
+
+p.home_muti_line_btn {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0.75em;
+}
+
+@media only screen and (max-width: 576px) {
+  p.home_muti_line_btn {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0em;
+  }
+}
