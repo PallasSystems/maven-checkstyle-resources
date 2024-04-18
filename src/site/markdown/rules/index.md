@@ -13,7 +13,7 @@ This section outlines the rules applied within this checkstyle file and why they
 | [ArrayTypeStyle](https://checkstyle.sourceforge.io/checks/misc/arraytypestyle.html#ArrayTypeStyle)                   | N/A | |
 | [AvoidDoubleBraceInitialization](https://checkstyle.sourceforge.io/checks/coding/avoiddoublebraceinitialization.html#AvoidDoubleBraceInitialization) | N/A | |
 | [AvoidNoArgumentSuperConstructorCall](https://checkstyle.sourceforge.io/checks/coding/avoidnoargumentsuperconstructorcall.html#AvoidNoArgumentSuperConstructorCall) | N/A | |
-| [AvoidStarImport](https://checkstyle.sourceforge.io/checks/imports/avoidstarimport.html#AvoidStarImport)             | N/A | To help identify when libraries use the same class name which can do similary things. |
+| [AvoidStarImport](https://checkstyle.sourceforge.io/checks/imports/avoidstarimport.html#AvoidStarImport)             | N/A | It is each for projects to pull in multiple libraries and so have multiple classes with the same name on the classpath. The requirement for explicitly importing each class allows developers to see when they have imported a class from the wrong library. |
 | [CovariantEquals](https://checkstyle.sourceforge.io/checks/coding/covariantequals.html#CovariantEquals)              | N/A | |
 | [CommentsIndentation](https://checkstyle.sourceforge.io/checks/misc/commentsindentation.html#CommentsIndentation)    | N/A | |
 | [CatchParameterName](https://checkstyle.sourceforge.io/checks/naming/catchparametername.html#CatchParameterName)     | N/A | |
@@ -59,7 +59,7 @@ This section outlines the rules applied within this checkstyle file and why they
 | [LocalFinalVariableName](https://checkstyle.sourceforge.io/checks/naming/localfinalvariablename.html#LocalFinalVariableName) | N/A | |
 | [LambdaParameterName](https://checkstyle.sourceforge.io/checks/naming/lambdaparametername.html#LambdaParameterName)  | N/A | |
 | [LocalVariableName](https://checkstyle.sourceforge.io/checks/naming/localvariablename.html#LocalVariableName)        | N/A | |
-| [MagicNumber](https://checkstyle.sourceforge.io/checks/coding/magicnumber.html#MagicNumber)                          | N/A | This is to prevent arbitary numbers being defined within a codebase without any context. By forcing numbers to be assigned a variable we increases the chances of understanding why that particular number is important. |
+| [MagicNumber](https://checkstyle.sourceforge.io/checks/coding/magicnumber.html#MagicNumber)                          | N/A | When working at a low technical level it is common to assign meaning to integer values. This can result in a situation where a conditional is based on a numeric value and there are many legacy codebases with references such as if (x == 10). This requires developers to assign the number ot a variable and combined with the variable name length rules should ensure there is context to the numeric value (e.g. final int NEW_LINE = 43; if (x == NEW_LINE )). |
 | [MissingDeprecated](https://checkstyle.sourceforge.io/checks/annotation/missingdeprecated.html#MissingDeprecated)    | N/A | |
 | [MissingOverride](https://checkstyle.sourceforge.io/checks/annotation/missingoverride.html#MissingOverride)          | N/A | |
 | [MutableException](https://checkstyle.sourceforge.io/checks/design/mutableexception.html#MutableException)           | N/A | |
