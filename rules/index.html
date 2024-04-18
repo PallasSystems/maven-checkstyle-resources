@@ -281,7 +281,7 @@
 <tr class="a">
 <td><a href="https://checkstyle.sourceforge.io/checks/imports/avoidstarimport.html#AvoidStarImport" class="externalLink">AvoidStarImport</a></td>
 <td>N/A</td>
-<td>To help identify when libraries use the same class name which can do similary things.</td></tr>
+<td>It is each for projects to pull in multiple libraries and so have multiple classes with the same name on the classpath. The requirement for explicitly importing each class allows developers to see when they have imported a class from the wrong library.</td></tr>
 <tr class="b">
 <td><a href="https://checkstyle.sourceforge.io/checks/coding/covariantequals.html#CovariantEquals" class="externalLink">CovariantEquals</a></td>
 <td>N/A</td>
@@ -465,7 +465,7 @@
 <tr class="a">
 <td><a href="https://checkstyle.sourceforge.io/checks/coding/magicnumber.html#MagicNumber" class="externalLink">MagicNumber</a></td>
 <td>N/A</td>
-<td>This is to prevent arbitary numbers being defined within a codebase without any context. By forcing numbers to be assigned a variable we increases the chances of understanding why that particular number is important.</td></tr>
+<td>When working at a low technical level it is common to assign meaning to integer values. This can result in a situation where a conditional is based on a numeric value and there are many legacy codebases with references such as if (x == 10). This requires developers to assign the number ot a variable and combined with the variable name length rules should ensure there is context to the numeric value (e.g. final int NEW_LINE = 43; if (x == NEW_LINE )).</td></tr>
 <tr class="b">
 <td><a href="https://checkstyle.sourceforge.io/checks/annotation/missingdeprecated.html#MissingDeprecated" class="externalLink">MissingDeprecated</a></td>
 <td>N/A</td>
