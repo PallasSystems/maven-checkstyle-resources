@@ -4,10 +4,10 @@
 
 	<groupId>uk.pallas.systems.site</groupId>
 	<artifactId>checkstyle</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<name>Pallas Checkstyle Configuration</name>
 	<packaging>jar</packaging>
-	<description>Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems.</description>
+	<description>Project to manage the Checkstyle rules to apply to all Pallas Systems Java projects.</description>
 	<url>https://www.pallas.uk/products/docs/uk.pallas.systems/parent</url>
 	<inceptionYear>2022</inceptionYear>
 
@@ -59,9 +59,9 @@
 			<url>https://maven.pkg.github.com/${github_organisation}/${github_repository_name}/</url>
 		</snapshotRepository>
 		<site>
-			<id>site</id>
-			<url>${project.scmpublish.pubScmUrl}</url>
-		</site>
+      <id>site</id>
+      <url>./</url>
+    </site>
 	</distributionManagement>
 
 	<properties>
@@ -74,7 +74,7 @@
 		<project.build.targetEncoding>ISO-8859-1</project.build.targetEncoding>
 
 		<!-- Compiler settings, lets you tweak what JDK you are using as needed. -->
-		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.release>11</maven.compiler.release>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -83,19 +83,26 @@
 		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
 		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
-		<!-- Used to get the Site files into the right structure, while also being 
-			readable in an SCM. -->
-		<project.docs.directory>docs</project.docs.directory>
-		<project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
-		<project.staging.directory>${project.build.directory}/staging/</project.staging.directory>
+  	<!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
+    <project.docs.directory>docs</project.docs.directory>
+    <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
+    <uk.pallas.systems.site.version>0.5.5</uk.pallas.systems.site.version>
+    <!-- Used to publish the maven site. -->
+    <scmpublish.scm.branch>gh-pages</scmpublish.scm.branch>
+    <scmpublish.pubScmUrl>${project.scm.connection}</scmpublish.pubScmUrl>
+    <scmpublish.content>${project.build.directory}/staging</scmpublish.content>
+    <!-- GitHub Changelog Parameters -->
+    <displayFileRevDetailUrl>${project.scm.url}/tree/master/%FILE%</displayFileRevDetailUrl>
+    <displayChangeSetDetailUrl>${project.scm.url}/commit</displayChangeSetDetailUrl>
 
 		<!-- Apache Maven Build Plugin Versions. -->
-		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-		<maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
-		<maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
+    <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
+    <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
 
 		<!-- Apache Maven Test Plugin Versions. -->
-		<jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+		<jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
 		<maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
 		<maven-failsafe-plugin.version>3.2.5</maven-failsafe-plugin.version>
 		<!-- Jacoco Settings. -->
@@ -103,7 +110,7 @@
 
 		<!-- Apache Maven Release Plugin Versions. -->
 		<checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
-		<maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
+		<maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
 		<maven-release-plugin.version>3.0.1</maven-release-plugin.version>
 		<releaseVersion />
 
@@ -111,18 +118,18 @@
 		<maven-site-plugin.version>4.0.0-M13</maven-site-plugin.version>
 		<maven-project-info-reports-plugin.version>3.5.0</maven-project-info-reports-plugin.version>
 		<maven-scm-publish-plugin.version>3.2.1</maven-scm-publish-plugin.version>
-		<maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
 		<maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
 		<maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
 		<maven-jxr-plugin.version>3.3.2</maven-jxr-plugin.version>
-		<maven-surefire-report-plugin.version>3.1.0</maven-surefire-report-plugin.version>
+		<maven-surefire-report-plugin.version>3.2.5</maven-surefire-report-plugin.version>
 		<taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
 		<maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
 		<sonar-maven-plugin.version>5.1</sonar-maven-plugin.version>
 		<build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
 
 		<!-- Spotbugs specific configuration. -->
-		<spotbugs-maven-plugin.version>4.8.3.1</spotbugs-maven-plugin.version>
+		<spotbugs-maven-plugin.version>4.8.4.0</spotbugs-maven-plugin.version>
 		<spotbugs.xmlOutput>true</spotbugs.xmlOutput>
 		<spotbugs.effort>Max</spotbugs.effort>
 		<spotbugs.skipEmptyReport>true</spotbugs.skipEmptyReport>
@@ -134,6 +141,9 @@
 		<sonar.organization>pallassystems</sonar.organization>
 		<sonar.moduleKey>${project.groupId}-${project.artifactId}</sonar.moduleKey>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
+		<!-- Dependencies -->
+		<uk.pallas.systems.site.version>0.5.7</uk.pallas.systems.site.version>
 	</properties>
 
 	<build>
@@ -265,25 +275,30 @@
 				</plugin>
 
 				<!-- Apache Maven Reporting Plugin Definitions. -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>${maven-site-plugin.version}</version>
-					<configuration>
-						<pomPackagingOnly>false</pomPackagingOnly>
-						<topSiteURL>${project.scmpublish.pubScmUrl}</topSiteURL>
-						<workingDirectory>${project.build.interim.site.directory}</workingDirectory>
-					</configuration>
-					<executions>
-						<execution>
-							<id>attach-descriptor</id>
-							<goals>
-								<goal>attach-descriptor</goal>
-							</goals>
-							<phase>post-integration-test</phase>
-						</execution>
-					</executions>
-				</plugin>
+        <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                    <configuration>
+                        <pomPackagingOnly>false</pomPackagingOnly>
+                        <topSiteURL>${project.url}</topSiteURL>
+                        <workingDirectory>${project.build.interim.site.directory}</workingDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-descriptor</id>
+                            <goals>
+                                <goal>attach-descriptor</goal>
+                            </goals>
+                            <phase>post-integration-test</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+      	<plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-dependency-plugin</artifactId>
+					<version>${maven-dependency-plugin.version}</version>
+      	</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-scm-publish-plugin</artifactId>
@@ -426,121 +441,124 @@
 	</reporting>
 
 	<profiles>
-		<profile>
-			<id>documentation</id>
-			<activation>
-				<file>
-					<exists>src/main/java</exists>
-				</file>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>${maven-source-plugin.version}</version>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>${maven-javadoc-plugin.version}</version>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-			<reporting>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
-				</plugins>
-			</reporting>
-		</profile>
-		<profile>
-			<id>docs-documentation</id>
-			<activation>
-				<file>
-					<exists>src/main/resources</exists>
-				</file>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-resources-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>copy-resources-into-target</id>
-								<goals>
-									<goal>copy-resources</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<resources>
-										<resource>
-											<directory>src/main/resources/</directory>
-											<filtering>false</filtering>
-										</resource>
-									</resources>
-									<outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>release</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>net.nicoulaj.maven.plugins</groupId>
-						<artifactId>checksum-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>source-release-checksum</id>
-								<phase>post-integration-test</phase>
-								<goals>
-									<goal>artifacts</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+        <profile>
+            <id>documentation</id>
+            <activation>
+                <file>
+                    <exists>src/main/java</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <reporting>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </reporting>
+        </profile>
+        <profile>
+            <id>docs-documentation</id>
+            <activation>
+                <file>
+                    <exists>src/site</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>unpack-site-resources</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>uk.pallas.systems.site</groupId>
+                                            <artifactId>resources</artifactId>
+                                            <version>${uk.pallas.systems.site.version}</version>
+                                            <type>jar</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>net.nicoulaj.maven.plugins</groupId>
+                        <artifactId>checksum-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>source-release-checksum</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>artifacts</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
