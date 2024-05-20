@@ -126,7 +126,7 @@
 		<taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
 		<maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
 		<sonar-maven-plugin.version>5.1</sonar-maven-plugin.version>
-		<build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
+		<build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
 
 		<!-- Spotbugs specific configuration. -->
 		<spotbugs-maven-plugin.version>4.8.4.0</spotbugs-maven-plugin.version>
