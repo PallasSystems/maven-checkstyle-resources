@@ -129,7 +129,7 @@
 		<build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
 
 		<!-- Spotbugs specific configuration. -->
-		<spotbugs-maven-plugin.version>4.8.6.2</spotbugs-maven-plugin.version>
+		<spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
 		<spotbugs.xmlOutput>true</spotbugs.xmlOutput>
 		<spotbugs.effort>Max</spotbugs.effort>
 		<spotbugs.skipEmptyReport>true</spotbugs.skipEmptyReport>
