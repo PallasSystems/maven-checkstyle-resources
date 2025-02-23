@@ -4,7 +4,7 @@
 
 	<groupId>uk.pallas.systems.site</groupId>
 	<artifactId>checkstyle</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<name>Pallas Checkstyle Configuration</name>
 	<packaging>jar</packaging>
 	<description>Project to manage the Checkstyle rules to apply to all Pallas Systems Java projects.</description>
