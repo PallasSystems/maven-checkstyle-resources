@@ -1,12 +1,28 @@
-name: Release NPM project
+name: Release Java/Maven project
 
 on:
   create:
-    branches:
-      - 'release/*'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  actions: read
+  checks: write
+  issues: write
+  packages: write
+  pages: write
+  pull-requests: write
+
 jobs:
-  call-workflow-passing-data:
+  call-build-verification-workflow:
+    uses: PallasSystems/infrastructure-ci/.github/workflows/java_maven_workflow.yml@main
+    secrets: inherit
+    with:
+      JAVA_VERSION: 21
+  call-release-workflow:
+    if: ${{ contains(github.ref, 'refs/heads/release') }}
     uses: PallasSystems/infrastructure-ci/.github/workflows/java_maven_release_on_branch.yml@main
     secrets: inherit
+    with:
+      JAVA_VERSION: 21
+      
